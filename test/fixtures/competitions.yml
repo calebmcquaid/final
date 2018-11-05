@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  miles: 1
+  steps: 1
+  calories: 1
+  time: 1
+
+two:
+  miles: 1
+  steps: 1
+  calories: 1
+  time: 1

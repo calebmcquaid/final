@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Wecompete</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Karla" %>
+  </head>
+  <body>
+    <header>
+      <div>
+        <%= image_tag( "trophy.svg", class: "head-logo", height: "25") %>
+        WeCompete
+      </div>
+      <nav>
+        <a href="#">Compete!</a>
+        <a href="#">About</a>
+        <a href="#">Log In</a>
+      </nav>
+    </header>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <%= yield %>
+    <footer>
+      <div>
+        <%= image_tag( "trophy.svg", class: "head-logo", height: "25") %>
+        WeCompete
+      </div>
+      <p class="footer-tagline">
+        Crossing platforms to bring athletes together
+      </p>
+      <h6 class="copyright">
+        Copyright 2018, Caleb McQuaid
+      </h6>
+    </footer>
+  </body>
+</html>
