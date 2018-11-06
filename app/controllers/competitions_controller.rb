@@ -8,6 +8,10 @@ class CompetitionsController < ApplicationController
     @competition = current_user.competition
   end
 
+  def create
+    render text: request.env['omniauth.auth'].to_yaml
+  end
+
 private
 
   def competition_params

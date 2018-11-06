@@ -15,9 +15,14 @@
         WeCompete
       </div>
       <nav>
+        <%= link_to 'Strava', '/auth/strava' %>
         <a href="#">Compete!</a>
         <a href="#">About</a>
-        <a href="#">Log In</a>
+        <% if user_signed_in? %>
+          <%= link_to('Logout', destroy_user_session_path, method: :delete) %>        
+        <% else %>
+          <%= link_to('Login', new_user_session_path)  %>  
+        <% end %>
       </nav>
     </header>
     <p class="notice"><%= notice %></p>

@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :users, only: [:show]
-  root to: "competitions#new"
+  root to: 'users#index'
 
+  get '/auth/:provider/callback', to: 'users#index'
 
   resources :competitions
 
