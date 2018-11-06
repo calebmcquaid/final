@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
   def index
-    redirect_to( user_path, alert: "This is an admin function.") unless current_user.admin?
     @users = User.all
   end
 
@@ -15,5 +14,9 @@ class UsersController < ApplicationController
     else
      redirect_to new_user_path, alert: "Error creating user."
     end
+  end
+
+  def current_user_home
+    redirect_to current_user
   end
 end

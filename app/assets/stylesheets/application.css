@@ -78,6 +78,41 @@ footer {
   flex-direction: column;
 }
 
+.main-login-div {
+  display: flex;
+  width: 600px;
+  border-radius: 10px;
+  height: 300px;
+  padding: 10px;
+  background: #CDCDCD;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.centered-section {
+  display: flex;
+}
+
+.inner-login-div {
+  display: flex;
+  flex-direction: column;
+}
+
+.inner-login-div h2 {
+  background: inherit;
+}
+
+.inner-login-div label {
+  font-size: 20px
+}
+
+.inner-login-div input {
+  width: 100%;
+  border-radius: 5px;
+  height: 25px;
+  font-size: 14px;
+}
+
 /*buttons*/
 
 .footer-tagline {
