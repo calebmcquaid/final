@@ -113,6 +113,20 @@ footer {
   font-size: 14px;
 }
 
+.user-section {
+  display: flex;
+}
+
+.user-div {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.name-div {
+  display: flex;
+}
+
 /*buttons*/
 
 .footer-tagline {

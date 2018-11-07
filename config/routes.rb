@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   get '/auth/fitbit', to: 'fitbit#make_request'
 
+  get 'https://www.strava.com/oauth/authorize', to: 'strava#make_request' 
+
   resources :competitions
 
   post ':controller(/:action(/:id(.:format)))'

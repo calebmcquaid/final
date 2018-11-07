@@ -1,1 +1,13 @@
-<%= @user.name %>
+<section class="user-section">
+  <div class="user-div">
+    <img src="#">
+    <div class="name-div">
+      <h3><%= @user.first_name %></h3><h3><%= @user.last_name %></h3>
+    </div>
+    <%= link_to "Fitbit Sign In", "/auth/fitbit" %>
+    <%= link_to "Strava Sign In", "/auth/strava" %>
+    <%= button_to "Go Compete!", "/competitions/new" %>
+  </div>
+</section>
+
+
