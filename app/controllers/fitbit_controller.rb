@@ -1,23 +1,14 @@
 class FitbitController < ApplicationController
-  def get_response
+  def callback
     # Callback from Fitbit Oauth
 
     # Oauth Access Credentials
-
-    oauth_token = params[:oauth_token]
-    oauth_verifier = params[:oauth_verifier]
-
-    # User Information and User Access Credentials
-
-    fitbit_data  = request.env['omniauth.auth']
-
-    # Get User Activity Information                                        
-
-    activities = get_user_activities(fitbit_data)        
-
-
-    render json:activities                                                     
-
+    
+    current_user.fitbit_access_token = request.env['omniauth.auth']['credentials']['token']
+    current_user.fitbit_refresh_token = request.env['omniauth.auth']['credentials']['refresh_token']
+    current_user.fitbit_user_id = request.env['omniauth.auth']['uid']
+    current_user.save!
+    redirect_to user_path(current_user)
   end
 
 private

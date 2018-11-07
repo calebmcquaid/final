@@ -3,9 +3,10 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
   root to: 'users#index'
 
-  get '/auth/:provider/callback', to: 'users#index'
+  # get '/auth/:provider/callback', to: 'users#index'
+  get '/auth/fitbit/callback', to: 'fitbit#callback'
 
-  get '/auth/fitbit', to: 'fitbit#make_request'
+  # get '/auth/fitbit', to: 'fitbit#make_request'
 
   get 'https://www.strava.com/oauth/authorize', to: 'strava#make_request' 
 
