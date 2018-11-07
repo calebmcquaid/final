@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   get '/auth/:provider/callback', to: 'users#index'
 
+  get '/auth/fitbit', to: 'fitbit#make_request'
+
   resources :competitions
 
   post ':controller(/:action(/:id(.:format)))'
