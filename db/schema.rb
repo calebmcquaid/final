@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_05_192134) do
+ActiveRecord::Schema.define(version: 2018_11_07_203655) do
 
   create_table "competitions", force: :cascade do |t|
     t.integer "miles"
@@ -31,6 +31,12 @@ ActiveRecord::Schema.define(version: 2018_11_05_192134) do
     t.datetime "updated_at", null: false
     t.string "first_name"
     t.string "last_name"
+    t.string "user_token"
+    t.string "fitbit_access_token"
+    t.string "fitbit_refresh_token"
+    t.string "fitbit_user_id"
+    t.string "strava_access_token"
+    t.string "strava_refresh_token"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

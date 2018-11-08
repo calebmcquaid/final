@@ -4,8 +4,8 @@ class CompetitionsController < ApplicationController
   end
 
   def index
-    @competition = Competition.where(user: current_user)
-    @competition = current_user.competition
+    # @competition = Competition.where(user: current_user)
+    @competition = Competition.new
   end
 
   def create
