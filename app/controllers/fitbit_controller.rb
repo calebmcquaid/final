@@ -11,17 +11,19 @@ class FitbitController < ApplicationController
     redirect_to user_path(current_user)
   end
 
-  def start_activity
-    client.activity_time_series(resource, opts={Competition.time})
-  end
+  # def start_activity
+  #   @client.activity_time_series(resource, opts={Competition.time})
+  # end
 
   private
+  def client
       client = FitbitAPI::Client.new(client_id: ENV['FITBIT_KEY'],
                                  client_secret: ENV['FITBIT_SECRET'],
-                                 access_token: current_user.fitbit_access_token,
-                                 refresh_token: current_user.fitbit_refresh_token,
+                                 access_token: fitbit_access_token,
+                                 refresh_token: fitbit_refresh_token,
                                  expires_at: 31536000,
-                                 user_id: current_user.fitbit_user_id)
+                                 user_id: fitbit_user_id)
+    end
 
 # private
 #   def get_user_activities(fitbit_data)

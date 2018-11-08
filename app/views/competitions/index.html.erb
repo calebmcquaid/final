@@ -1,0 +1,12 @@
+<section>
+  <h2>Select your competition parameters</h2>
+  <div>
+    <%= form_for @competition, url: {action: 'create', controller: 'competitions'} do |f| %>
+      Steps: <%= f.check_box :steps %><br />
+      Calories: <%= f.check_box :calories %><br />
+      Miles: <%= f.check_box :miles %><br />
+      Length of Competition: <%= f.select :time, [ '1 Day', '3 Days', '5 Days', '7 Days' ], :prompt => 'Select One' %><br />
+      <%= f.submit %>
+    <% end %>
+  </div>
+</section>
