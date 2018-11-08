@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   # get '/auth/:provider/callback', to: 'users#index'
   get '/auth/fitbit/callback', to: 'fitbit#callback'
+  get '/auth/strava/callback', to: 'strava#callback'
 
   # get '/auth/fitbit', to: 'fitbit#make_request'
 
