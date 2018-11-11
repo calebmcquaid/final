@@ -1,0 +1,14 @@
+Miles: <%= @competition.miles %>
+Steps: <%= @competition.steps %>
+Calories: <%= @competition.calories %>
+
+STATS:
+<% @competition.stats.each do |stat| %>
+  <p>
+  Name: <%= stat.user.first_name %>
+  Steps: <%= stat.steps %>
+  When: <%= stat.recorded_at %>
+  </p>
+<% end %>
+
+<%= link_to "Fetch Latest Stats", fetch_stats_competition_path %>

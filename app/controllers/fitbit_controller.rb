@@ -15,14 +15,14 @@ class FitbitController < ApplicationController
   #   @client.activity_time_series(resource, opts={Competition.time})
   # end
 
-  private
+ # client.activity_time_series(, start_date: Competition.time_start, end_date: Competition.time_end)
   def client
       client = FitbitAPI::Client.new(client_id: ENV['FITBIT_KEY'],
                                  client_secret: ENV['FITBIT_SECRET'],
-                                 access_token: fitbit_access_token,
-                                 refresh_token: fitbit_refresh_token,
+                                 access_token: current_user.fitbit_access_token,
+                                 refresh_token: current_user.fitbit_refresh_token,
                                  expires_at: 31536000,
-                                 user_id: fitbit_user_id)
+                                 user_id: current_user.fitbit_user_id)
     end
 
 # private

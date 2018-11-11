@@ -10,13 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_07_203655) do
+ActiveRecord::Schema.define(version: 2018_11_09_211742) do
 
   create_table "competitions", force: :cascade do |t|
-    t.integer "miles"
-    t.integer "steps"
+    t.boolean "miles"
+    t.boolean "steps"
+    t.boolean "calories"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.date "start_date"
+    t.date "end_date"
+  end
+
+  create_table "stats", force: :cascade do |t|
+    t.integer "competition_id"
+    t.integer "user_id"
     t.integer "calories"
-    t.integer "time"
+    t.integer "steps"
+    t.integer "miles"
+    t.datetime "recorded_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
