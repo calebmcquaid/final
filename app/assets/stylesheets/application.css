@@ -13,11 +13,17 @@
  *= require_tree .
  *= require_self
  */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
 body {
   -webkit-font-smoothing: antialiased;
   font-family: 'Karla', serif;
   margin: 0;
   width: 100%;
+  margin-bottom: 60px;
 }
 
 /*HEADER-FOOTER*/
@@ -40,6 +46,9 @@ footer {
   height: 145px;
   line-height: 60px;
   margin: 0;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
  }
 
  /*Caleb's*/
@@ -91,6 +100,7 @@ footer {
 
 .centered-section {
   display: flex;
+  margin: 60px;
 }
 
 .inner-login-div {
@@ -125,6 +135,15 @@ footer {
 
 .name-div {
   display: flex;
+}
+
+.competition-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+  background: url('images/chanan-greenblatt-50120-unsplash.jpg') no-repeat center center fixed; 
+;
 }
 
 /*buttons*/
@@ -172,6 +191,25 @@ header a {
 
 /*TYPOGRAPHY*/
 
+#user_remember_me {
+  width: 25px;
+}
+
+.field-special {
+  display: flex;
+}
+
+.field-special label {
+  display: flex;
+  align-items: center;
+}
+
+.field input{
+  border: none;
+  margin: 5px 0px;
+  padding-left: 5px
+}
+
 .alert {
   color: black;
 }
@@ -200,7 +238,7 @@ h2 {
   color: #ffba2e;
   font-size: 37px;
   font-weight: 100;
-  margin: 10px;
+  margin: 0px 10px 10px 10px;
 }
 
 .h2-search-page {

@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :users, only: [:show]
-  root to: 'users#index'
+  root to: 'users#current_user_home'
+
+  resources :competitions do
+    member do
+      get "fetch_stats"
+    end
+  end
 
   # get '/auth/:provider/callback', to: 'users#index'
   get '/auth/fitbit/callback', to: 'fitbit#callback'
@@ -11,7 +17,7 @@ Rails.application.routes.draw do
 
   get 'https://www.strava.com/oauth/authorize', to: 'strava#make_request' 
 
-  resources :competitions
+  get ':competitions/create', to: 'competitions#create'
 
   post ':controller(/:action(/:id(.:format)))'
   get ':controller(/:action(/:id(.:format)))'
