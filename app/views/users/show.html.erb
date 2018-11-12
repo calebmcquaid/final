@@ -1,12 +1,35 @@
 <section class="user-section">
   <div class="user-div">
-    <img src="#">
     <div class="name-div">
-      <h3><%= @user.first_name %></h3><h3><%= @user.last_name %></h3>
+      <% if @user.avatar.attached? %>
+        <%= image_tag user.avatar.variant(resize: "100x100") %>
+      <% else %>
+        <%= image_tag('aquachara-458327-unsplash.jpg', size: '100x100', class: 'avatar') %>
+      <% end %>
+      <div class="name-buttons-div">
+        <h3><%= @user.first_name %><%= ' ' %><%= @user.last_name %></h3>
+        <%= button_to "Fitbit Sign In", "/auth/fitbit", class: 'fitbit-button' %>
+        <%= button_to "Strava Sign In", "/auth/strava", class: 'strava-button' %>
+        <%= button_to "Go Compete!", "/competitions/new" %>
+      </div>
     </div>
-    <%= link_to "Fitbit Sign In", "/auth/fitbit" %>
-    <%= link_to "Strava Sign In", "/auth/strava" %>
-    <%= button_to "Go Compete!", "/competitions/create" %>
+    <h2>Previous Competitions</h2>
+    <% if @competitions == nil %>
+      <%= 'Get out there and compete!' %>
+    <% else %>
+      <% @competition.stats.each do |stat| %>
+        <div>
+          <p>
+          Name: <%= stat.user.first_name %>
+          <br />
+          Steps: <%= stat.steps %>
+          <br />
+          When: <%= stat.recorded_at %>
+          </p>
+        </div>
+      <% end %>
+    <% end %>
+<%= link_to "Fetch Latest Stats", fetch_stats_competition_path %>
   </div>
 </section>
 

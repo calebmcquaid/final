@@ -42,6 +42,6 @@ class CompetitionsController < ApplicationController
 private
 
   def competition_params
-    params.require(:competition).permit(:calories, :miles, :steps, :start_date, :end_date)
+    params.permit(:calories, :miles, :steps, :start_date, :end_date, :competition)
   end
 end
