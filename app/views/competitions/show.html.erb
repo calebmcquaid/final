@@ -1,14 +1,42 @@
-Miles: <%= @competition.miles %>
-Steps: <%= @competition.steps %>
-Calories: <%= @competition.calories %>
+<section>
+  <h2>What are we tracking?</h2>
+  <div class="tracking-div">
+    <p>Miles?: <% @competition.miles %>
+      <% if @competition.miles == false %>
+      Nope!
+      <% else %>
+      You Betcha!
+      <% end %>
+    </p>
+    <p>Steps?: <% @competition.steps %>
+      <% if @competition.steps == false %>
+      Nope!
+      <% else %>
+      You Betcha!
+      <% end %>
+    </p>
+    <p>Calories?: <% @competition.calories %>
+      <% if @competition.calories == false %>
+      Nope!
+      <% else %>
+      You Betcha!
+      <% end %>
+    </p>
+  </div>
 
 STATS:
+
 <% @competition.stats.each do |stat| %>
-  <p>
-  Name: <%= stat.user.first_name %>
-  Steps: <%= stat.steps %>
-  When: <%= stat.recorded_at %>
-  </p>
+  <div>
+    <p>
+    Name: <%= stat.user.first_name %>
+    <br />
+    Steps: <%= stat.steps %>
+    <br />
+    When: <%= stat.recorded_at %>
+    </p>
+  </div>
 <% end %>
 
 <%= link_to "Fetch Latest Stats", fetch_stats_competition_path %>
+</section>

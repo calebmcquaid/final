@@ -6,4 +6,6 @@ class User < ApplicationRecord
 
   has_many :competitions
   has_many :stats
+
+  has_one_attached :avatar
 end
