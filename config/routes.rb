@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     end
   end
 
+  get '/about', to: 'about#index'
+
   # get '/auth/:provider/callback', to: 'users#index'
   get '/auth/fitbit/callback', to: 'fitbit#callback'
   get '/auth/strava/callback', to: 'strava#callback'
