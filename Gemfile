@@ -24,6 +24,8 @@ gem 'omniauth-strava'
 gem 'feathericon-rails'
 gem 'strava-api-v3'
 gem 'fitbit_api'
+gem 'chartkick'
+
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'

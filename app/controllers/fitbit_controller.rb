@@ -11,11 +11,7 @@ class FitbitController < ApplicationController
     redirect_to user_path(current_user)
   end
 
-  # def start_activity
-  #   @client.activity_time_series(resource, opts={Competition.time})
-  # end
 
- # client.activity_time_series(, start_date: Competition.time_start, end_date: Competition.time_end)
   def client
       client = FitbitAPI::Client.new(client_id: ENV['FITBIT_KEY'],
                                  client_secret: ENV['FITBIT_SECRET'],
@@ -24,31 +20,4 @@ class FitbitController < ApplicationController
                                  expires_at: 31536000,
                                  user_id: current_user.fitbit_user_id)
     end
-
-# private
-#   def get_user_activities(fitbit_data)
-#     fitbit_user_id = fitbit_data["uid"]
-#     user_secret = fitbit_data["credentials"]["secret"]
-#     user_token = fitbit_data["credentials"]["token"]
-
-#     # Store this information in you user model for
-
-#     # logins in the future.
-
-#     client = FitbitAPI::Client.new({
-#       consumer_key: ENV['FITBIT_KEY'],
-#       consumer_secret: ENV['FITBIT_SECRET'],
-#       token: user_token,
-#       secret: user_secret,
-#       user_id: fitbit_user_id,
-#     })
-
-#     # Reconnects existing user using the information above
-
-#     access_token = client.reconnect(user_token, user_secret)
-
-#     # client.activities_on_date('2015-03-25') <- Specific Date
-
-#     client.activities_on_date('today')
-#   end
 end

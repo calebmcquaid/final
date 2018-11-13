@@ -24,10 +24,10 @@
     </p>
   </div>
 
-STATS:
+Your stats:
 
 <% @competition.stats.each do |stat| %>
-  <div>
+  <div class="stat-div">
     <p>
     Name: <%= stat.user.first_name %>
     <br />
@@ -39,4 +39,9 @@ STATS:
 <% end %>
 
 <%= link_to "Fetch Latest Stats", fetch_stats_competition_path %>
+
+<%= line_chart @competition.stats.group(:recorded_at).sum(:steps) %>
+
+
+
 </section>

@@ -34,10 +34,12 @@ class CompetitionsController < ApplicationController
     @stat.user = current_user
     competition = Competition.find(params[:id])
     @stat.competition = competition
+    @stat.recorded_at = DateTime.now
     @stat.save
 
     redirect_to competition_path(competition)
   end
+
 
 private
 

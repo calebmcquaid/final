@@ -24,4 +24,12 @@ class UsersController < ApplicationController
   def current_user_home
     redirect_to current_user
   end
+
+  def fetch_stats
+    @stat = Stat.new
+    @stat.user = current_user
+    competition = Competition.find(params[:id])
+    @stat.competition = competition
+    @stat.save
+  end
 end
