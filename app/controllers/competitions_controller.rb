@@ -15,6 +15,8 @@ class CompetitionsController < ApplicationController
     @competition = Competition.new(competition_params)
 
     if @competition.save
+      @competition.users << current_user
+      @competition.fetch_fitbit_data
       redirect_to competition_path(@competition)
     else
       flash[:errors] = @competition.errors.full_messages
@@ -44,6 +46,6 @@ class CompetitionsController < ApplicationController
 private
 
   def competition_params
-    params.permit(:calories, :miles, :steps, :start_date, :end_date, :competition)
+    params.require(:competition).permit(:calories, :miles, :steps, :start_date, :end_date, :competition)
   end
 end
