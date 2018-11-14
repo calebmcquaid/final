@@ -25,6 +25,7 @@ gem 'feathericon-rails'
 gem 'strava-api-v3'
 gem 'fitbit_api'
 gem 'chartkick'
+gem 'groupdate'
 
 
 # Use CoffeeScript for .coffee assets and views

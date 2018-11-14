@@ -23,13 +23,12 @@ body {
   font-family: 'Karla', serif;
   margin: 0;
   width: 100%;
-  margin-bottom: 60px;
 }
 
 /*HEADER-FOOTER*/
 
  header {
-  background-image: linear-gradient(to right, #f53240, #F77D86);
+  background: #f96e77;
   color: #ffffff;
   font-family: 'Karla', serif;
   font-size: 24px;
@@ -107,7 +106,7 @@ footer {
   display: flex;
   width: 400px;
   border-radius: 10px;
-  height: 400px;
+  height: 415px;
   padding: 10px;
   background: #acbecf;
   justify-content: center;
@@ -158,7 +157,7 @@ footer {
 }
 
 .inner-login-div-sign-up input {
-  width: 100%;
+  width: 269px;
   border-radius: 5px;
   height: 25px;
   font-size: 14px;
@@ -247,6 +246,10 @@ footer {
   margin: 20px;
 }
 
+.stat-section {
+  margin: 20px;
+}
+
 .card-section {
   display: flex;
 }
@@ -323,7 +326,7 @@ footer {
 
 header div {
   display: inline;
-  padding: 0px 0px 0px 22px;
+  padding: 4px 0px 0px 14px;
 }
 
 footer div {
@@ -339,6 +342,18 @@ header a {
   margin: 0px 24px 0px 0px;
   text-decoration: none;
   vertical-align: middle;
+}
+
+#sign-up {
+  width: 275px;
+  margin-top: 10px;
+}
+
+.circle-div {
+  background: white;
+  border-radius: 25px;
+  width: 20px;
+  margin: 0px 16px 0px 8px;
 }
 
 /*TYPOGRAPHY*/

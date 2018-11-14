@@ -14,21 +14,7 @@
       </div>
     </div>
     <h2>Previous Competitions</h2>
-    <% if @competitions == nil %>
-      <%= 'Get out there and compete!' %>
-    <% else %>
-      <% @competition.stats.each do |stat| %>
-        <div>
-          <p>
-          Name: <%= stat.user.first_name %>
-          <br />
-          Steps: <%= stat.steps %>
-          <br />
-          When: <%= stat.recorded_at %>
-          </p>
-        </div>
-      <% end %>
-    <% end %>
+
 <%= link_to "Fetch Latest Stats", fetch_stats_competition_path %>
   </div>
 </section>

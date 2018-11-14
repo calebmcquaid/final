@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :users, only: [:show]
-  root to: 'home#index'
+  root to: 'users#current_user_home'
 
 
   resources :competitions do
@@ -9,6 +9,8 @@ Rails.application.routes.draw do
       get "fetch_stats"
     end
   end
+
+  get '/competitions', to: 'competitions#show[:id]'
 
   get '/about', to: 'about#index'
 

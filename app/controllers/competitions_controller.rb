@@ -12,15 +12,20 @@ class CompetitionsController < ApplicationController
   end
 
   def create
-    @competition = Competition.new(competition_params)
-
+    # competition_params = competition_params.merge("user_ids" => [competition_params["user_ids"], current_user.id])
+    user_ids = params[:user_ids] + [current_user.id]
+    @competition = Competition.new(competition_params)  
     if @competition.save
-      @competition.users << current_user
-      @competition.fetch_fitbit_data
-      redirect_to competition_path(@competition)
-    else
-      flash[:errors] = @competition.errors.full_messages
-      render :new
+      @competition.users << User.find(user_ids)
+      if @competition.fetch_fitbit_data
+         redirect_to competition_path(@competition)
+      else
+         @competition.fetch_strava_data
+         redirect_to competition_path(@competition)
+      # else
+      #     flash[:errors] = @competition.errors.full_messages
+      #     render :new
+      end
     end
   end
     # render text: request.env['omniauth.auth'].to_yaml
@@ -46,6 +51,6 @@ class CompetitionsController < ApplicationController
 private
 
   def competition_params
-    params.require(:competition).permit(:calories, :miles, :steps, :start_date, :end_date, :competition)
+    params.require(:competition).permit(:calories, :miles, :steps, :start_date, :end_date)
   end
 end

@@ -11,14 +11,19 @@
   <body>
     <header>
       <div>
+        <div class="circle-div">
         <%= image_tag( "trophy.svg", class: "head-logo", height: "25") %>
+        </div>
         WeCompete
       </div>
       <nav>
         <%= link_to 'Strava', '/auth/strava' %>
         <%= link_to 'Fitbit', '/auth/fitbit' %>
-        <%= link_to 'Compete!', '/competition/create' %>
+        <%= link_to 'Compete!', '/competitions/new' %>
         <%= link_to 'About', '/about' %>
+        <% if user_signed_in? %>
+          <%= link_to 'Profile', current_user %>
+        <% end %>
         <% if user_signed_in? %>
           <%= link_to('Logout', destroy_user_session_path, method: :delete) %>        
         <% else %>
