@@ -94,18 +94,34 @@ footer {
 
 .main-login-div {
   display: flex;
-  width: 600px;
+  width: 400px;
   border-radius: 10px;
   height: 300px;
   padding: 10px;
-  background: #CDCDCD;
+  background: #acbecf;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.main-login-div-sign-up {
+  display: flex;
+  width: 400px;
+  border-radius: 10px;
+  height: 400px;
+  padding: 10px;
+  background: #acbecf;
   justify-content: center;
   margin: 0 auto;
 }
 
 .centered-section {
   display: flex;
-  margin: 60px;
+  background: url('filip-mroz-272164-unsplash.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  align-items: center;
+  height: 530px;
 }
 
 .inner-login-div {
@@ -122,6 +138,26 @@ footer {
 }
 
 .inner-login-div input {
+  width: 100%;
+  border-radius: 5px;
+  height: 25px;
+  font-size: 14px;
+}
+
+.inner-login-div-sign-up {
+  display: flex;
+  flex-direction: column;
+}
+
+.inner-login-div-sign-up h2 {
+  background: inherit;
+}
+
+.inner-login-div-sign-up label {
+  font-size: 20px
+}
+
+.inner-login-div-sign-up input {
   width: 100%;
   border-radius: 5px;
   height: 25px;
@@ -177,8 +213,26 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 30px;
-  background: url('images/chanan-greenblatt-50120-unsplash.jpg') no-repeat center center fixed;
+}
+
+.competition-show-section {
+  margin-bottom: 20px;
+}
+
+.competition-div {
+  margin: 40px;
+}
+
+.competition-hero-div {
+  width: 100%;
+  height: 300px;
+  background-image: url('braden-collum-87874-unsplash.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .tracking-div {
@@ -215,6 +269,33 @@ footer {
 
 .hero-div h2 {
   padding: 0px 0px 25px 25px;
+}
+
+.main-home {
+  width: 565px;
+  border-radius: 10px;
+  background-image: url("main-home.jpg");
+  height: 300px;
+  background-repeat: no-repeat;
+  background-size: cover;
+ }
+
+/*divs*/
+
+.section-main {
+  display: flex;
+  justify-content: space-around;
+}
+
+.login-div {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  border-radius: 10px;
+  height: 300px;
+  padding: 10px;
+  background: #CDCDCD;
+  justify-content: center;
 }
 
 /*buttons*/

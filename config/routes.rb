@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :users, only: [:show]
-  root to: 'users#current_user_home'
+  root to: 'home#index'
+
 
   resources :competitions do
     member do

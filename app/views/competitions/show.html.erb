@@ -1,4 +1,4 @@
-<section>
+<section class="competition-show-section">
   <h2>What are we tracking?</h2>
   <div class="tracking-div">
     <p>Miles?: <% @competition.miles %>
@@ -29,9 +29,13 @@ Your stats:
 <% @competition.stats.each do |stat| %>
   <div class="stat-div">
     <p>
-    Name: <%= stat.user.first_name %>
+    Name: <%= stat.user.first_name %><% ' ' %> <%=stat.user.last_name %>
     <br />
     Steps: <%= stat.steps %>
+    <br />
+    Miles: <%= stat.miles %>
+    <br />
+    Calories: <%= stat.calories %>
     <br />
     When: <%= stat.recorded_at %>
     </p>
