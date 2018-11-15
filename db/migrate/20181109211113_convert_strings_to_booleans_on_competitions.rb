@@ -1,13 +1,12 @@
 class ConvertStringsToBooleansOnCompetitions < ActiveRecord::Migration[5.2]
   def up
-    change_column :competitions, :miles, :boolean
-    change_column :competitions, :calories, :boolean
-    change_column :competitions, :steps, :boolean
-  end
+    remove_column :competitions, :miles, :integer
+    add_column :competitions, :miles, :boolean
 
-  def down
-    change_column :competitions, :miles, :string
-    change_column :competitions, :calories, :string
-    change_column :competitions, :steps, :string
+    remove_column :competitions, :calories, :boolean
+    add_column :competitions, :calories, :boolean
+
+    remove_column :competitions, :steps, :boolean
+    add_column :competitions, :steps, :boolean
   end
 end

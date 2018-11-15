@@ -41,13 +41,13 @@ ActiveRecord::Schema.define(version: 2018_11_13_201949) do
   end
 
   create_table "competitions", force: :cascade do |t|
-    t.boolean "miles"
-    t.boolean "steps"
-    t.boolean "calories"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.date "start_date"
     t.date "end_date"
+    t.boolean "miles"
+    t.boolean "calories"
+    t.boolean "steps"
   end
 
   create_table "stats", force: :cascade do |t|
