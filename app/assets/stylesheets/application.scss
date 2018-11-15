@@ -66,7 +66,7 @@ footer {
  .main-home {
   width: 565px;
   border-radius: 10px;
-  background-image: url("main-home.jpg");
+  background-image: image-url(image_path("main-home.jpg"));
   height: 300px;
   background-repeat: no-repeat;
   background-size: cover;
@@ -124,7 +124,7 @@ footer {
 
 .centered-section {
   display: flex;
-  background: url('filip-mroz-272164-unsplash.jpg');
+  background: image-url('filip-mroz-272164-unsplash.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -176,7 +176,7 @@ footer {
 
 .user-section {
   display: flex;
-  background: url('rhone-671488-unsplash.jpg');
+  background: image-url('rhone-671488-unsplash.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -252,7 +252,7 @@ footer {
 .competition-hero-div {
   width: 100%;
   height: 300px;
-  background-image: url('braden-collum-87874-unsplash.jpg');
+  background-image: image-url('braden-collum-87874-unsplash.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -298,7 +298,7 @@ footer {
 .hero-div {
   width: 100%;
   height: 300px;
-  background-image: url('steven-lelham-342930-unsplash.jpg');
+  background-image: image-url('steven-lelham-342930-unsplash.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -313,7 +313,7 @@ footer {
 .main-home {
   width: 565px;
   border-radius: 10px;
-  background-image: url("main-home.jpg");
+  background-image: image-url("main-home.jpg");
   height: 300px;
   background-repeat: no-repeat;
   background-size: cover;
@@ -600,7 +600,7 @@ figcaption {
 }
 
 .head-under-main-hero3 {
-  background-image: url("hero-3.jpg");
+  background-image: image-url("hero-3.jpg");
   background-size: cover;
 }
 
@@ -643,7 +643,7 @@ figcaption {
 }
 
 .p-icon p:before {
-  background-image: url('icon-logo.png');
+  background-image: image-url('icon-logo.png');
   background-size: cover;
   content: '';
   display: block;
@@ -654,7 +654,7 @@ figcaption {
 }
 
 .p-icon-search h2:before {
-  background-image: url('icon-search.png');
+  background-image: image-url('icon-search.png');
   background-size: cover;
   content: '';
   display: block;
@@ -665,7 +665,7 @@ figcaption {
 }
 
 .block-q {
-  background-image: url('bg-quote.jpg');
+  background-image: image-url('bg-quote.jpg');
   background-size: cover;
   height: 232px;
   margin: 0px;
@@ -697,7 +697,7 @@ ul.bullets-orange-arrows {
 
 ul.bullets-orange-arrows >li:before {
   background-size: 10px;
-  content: url('icon-bullet-resized.png');
+  content: image-url('icon-bullet-resized.png');
   text-indent: -5px;
 }
 
@@ -744,7 +744,7 @@ li span {
 }
 
 .ad-vert-img-container {
-  background-image: url('bg-ad-1.jpg');
+  background-image: image-url('bg-ad-1.jpg');
   background-repeat: no-repeat;
   background-size: 192px;
   display: inline-block;
@@ -782,7 +782,7 @@ li span {
 }
 
 .ad-horiz-img-container {
-  background-image: url('bg-ad-3.png');
+  background-image: image-url('bg-ad-3.png');
   background-repeat: no-repeat;
   background-size: cover;
   display: block;
@@ -791,7 +791,7 @@ li span {
 }
 
 .ad-horiz-img-2 {
-  background-image: url('bg-ad-2.png');
+  background-image: image-url('bg-ad-2.png');
 }
 
 .ad-horiz-text-container {
@@ -916,7 +916,7 @@ li span {
 /*SEARCH PAGE*/
 
 .background-image-fullscreen {
-  background-image: url('search-bg.png');
+  background-image: image-url('search-bg.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -987,7 +987,7 @@ li span {
 }
 
 .search-results-img-container {
-  background-image: url('article-1.png');
+  background-image: image-url('article-1.png');
   background-repeat: no-repeat;
   background-size: cover;
   display: inline-block;
@@ -997,11 +997,11 @@ li span {
 }
 
 .article-2 {
-  background-image: url('article-2.png');
+  background-image: image-url('article-2.png');
 }
 
 .article-3 {
-  background-image: url('article-3.png');
+  background-image: image-url('article-3.png');
 }
 
 .search-results-img-container button {
