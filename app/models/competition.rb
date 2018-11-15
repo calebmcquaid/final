@@ -10,7 +10,7 @@ class Competition < ApplicationRecord
         client_secret: ENV['FITBIT_SECRET'],
         access_token: user.fitbit_access_token,
         refresh_token: user.fitbit_refresh_token,
-        expires_at: 31536000,
+        expires_at: 30.days.from_now.to_i,
         user_id: user.fitbit_user_id
       )
 
@@ -44,7 +44,7 @@ class Competition < ApplicationRecord
         token_type: 'Bearer',
         access_token: user.strava_access_token,
         refresh_token: user.strava_refresh_token,
-        expires_at: 3153600,
+        expires_at: 30.days.from_now.to_i
         )
 
       miles = client.list_athlete_activities("distance", after: start_date, before: end_date)

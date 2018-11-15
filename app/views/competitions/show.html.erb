@@ -23,44 +23,26 @@
       <% end %>
     </p>
   </div>
-
-  <section class= 'stat-section'>
-    Your stats:
-    <% @competition.stats.each do |stat| %>
-      <div class="stat-div">
-        <p>
-        Name: <%= stat.user.first_name %><% ' ' %> <%=stat.user.last_name %>
-        <br />
-        Steps: <%= stat.steps %>
-        <br />
-        Miles: <%= stat.miles %>
-        <br />
-        Calories: <%= stat.calories %>
-        <br />
-        When: <%= stat.recorded_at %>
-        </p>
-      </div>
-    <% end %>
     
     <%= link_to "Fetch Latest Stats",     fetch_stats_competition_path %>
+    </section>
     
     <%= line_chart [
   {name: "Steps", data: @competition.stats.group(:recorded_at).sum(:steps)},
   {name: "Calories", data: @competition.stats.group(:recorded_at).sum(:calories)},
   {name: "Miles", data: @competition.stats.group(:recorded_at).sum(:miles)}
 ] %>
-  </section>
 
-</section>
+
 
 <section class= 'stat-section'>
-    Their stats:
+    Stats:
     <% @competition.users.each do |user| %>
-      <% @competition.stats.each do |stat| %>
       <div class="stat-div">
         <p>
         Name: <%= user.first_name %><% ' ' %> <%= user.last_name %>
         <br />
+        <% user.stats_for_competition(@competition).each do |stat| %>
         Steps: <%= stat.steps %>
         <br />
         Miles: <%= stat.miles %>
@@ -72,6 +54,7 @@
       </div>
     <% end %>
   <% end %>
+  <%= link_to "Get Latest Stats",     fetch_stats_competition_path %>
 </section>
     
-    <%= link_to "Fetch Latest Stats",     fetch_stats_competition_path %>
+

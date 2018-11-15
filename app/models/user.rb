@@ -9,4 +9,8 @@ class User < ApplicationRecord
   has_many :stats
 
   has_one_attached :avatar
+
+  def stats_for_competition(competition)
+    stats.where(competition: competition)
+  end
 end
