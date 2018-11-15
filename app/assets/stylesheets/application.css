@@ -44,7 +44,7 @@ body {
  overflow: hidden;
  display: block;
  position: relative;
- padding-bottom: 100px; /* height of your footer */
+ 
 }
 
 footer {
@@ -55,7 +55,7 @@ footer {
   height: 145px;
   line-height: 60px;
   margin: 0;
-  position: absolute;
+/*  position: absolute;*/
   bottom: 0;
   width: 100%;
  }
@@ -140,6 +140,7 @@ footer {
 
 .inner-login-div h2 {
   background: inherit;
+  margin: 0px 10px 10px 10px;
 }
 
 .inner-login-div label {
@@ -160,6 +161,7 @@ footer {
 
 .inner-login-div-sign-up h2 {
   background: inherit;
+  margin: 0px 10px 10px 10px
 }
 
 .inner-login-div-sign-up label {
@@ -235,6 +237,13 @@ footer {
 
 .competition-show-section {
   margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.competition-show-section h2 {
+  display: flex;
+  justify-content: center;
 }
 
 .competition-div {
@@ -263,10 +272,19 @@ footer {
 
 .stat-div {
   margin: 20px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+}
+
+.stat-column {
+  display: flex;
+  flex-direction: column;
+
 }
 
 .stat-section {
   margin: 20px;
+  display: flex;
 }
 
 .card-section {
@@ -423,7 +441,6 @@ h2 {
   color: #ffba2e;
   font-size: 37px;
   font-weight: 100;
-  margin: 0px 10px 10px 10px;
 }
 
 .h2-search-page {

@@ -27,7 +27,7 @@ class Competition < ApplicationRecord
 
       prepped_stats.each do |stat_data|
         stat = Stat.new(stat_data)
-        stat.user = users.first
+        stat.user = user
         stat.competition = self
         stat.skip_fetch = true
         stat.save!

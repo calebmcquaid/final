@@ -13,6 +13,7 @@
       Competitor: <% User.where.not(id: current_user.id).each do |user| %>
         <%= check_box_tag "user_ids[]", user.id %>
         <%= label_tag "#{user.first_name} #{user.last_name}" %>
+        <br />
         <% end %>
       <%= submit_tag "Call Action" %>
     <% end %>

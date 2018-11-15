@@ -1,5 +1,5 @@
 <section class="competition-show-section">
-  <h2>What are we tracking?</h2>
+  <h2>Get Active!</h2>
   <div class="tracking-div">
     <p>Miles?: <% @competition.miles %>
       <% if @competition.miles == false %>
@@ -25,24 +25,28 @@
   </div>
     
     <%= link_to "Fetch Latest Stats",     fetch_stats_competition_path %>
-    </section>
-    
+</section>
+
+<div>
     <%= line_chart [
   {name: "Steps", data: @competition.stats.group(:recorded_at).sum(:steps)},
   {name: "Calories", data: @competition.stats.group(:recorded_at).sum(:calories)},
   {name: "Miles", data: @competition.stats.group(:recorded_at).sum(:miles)}
 ] %>
+</div>
 
 
 
 <section class= 'stat-section'>
     Stats:
     <% @competition.users.each do |user| %>
+    <div class="stat-column">
+      <% user.stats_for_competition(@competition).each do |stat| %>
       <div class="stat-div">
         <p>
         Name: <%= user.first_name %><% ' ' %> <%= user.last_name %>
         <br />
-        <% user.stats_for_competition(@competition).each do |stat| %>
+
         Steps: <%= stat.steps %>
         <br />
         Miles: <%= stat.miles %>
@@ -53,6 +57,7 @@
         </p>
       </div>
     <% end %>
+  </div>
   <% end %>
   <%= link_to "Get Latest Stats",     fetch_stats_competition_path %>
 </section>
