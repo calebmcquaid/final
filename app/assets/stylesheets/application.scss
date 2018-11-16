@@ -263,6 +263,7 @@ footer {
 
 .tracking-div {
   display: flex;
+  justify-content: center;
 }
 
 .tracking-div p {
@@ -273,6 +274,7 @@ footer {
   margin: 20px;
   background: rgba(0, 0, 0, 0.5);
   border-radius: 20px;
+  padding: 20px 40px;
 }
 
 .stat-column {
@@ -284,6 +286,7 @@ footer {
 .stat-section {
   margin: 20px;
   display: flex;
+  justify-content: space-around;
 }
 
 .card-section {

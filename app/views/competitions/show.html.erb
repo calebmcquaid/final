@@ -23,8 +23,6 @@
       <% end %>
     </p>
   </div>
-    
-    <%= link_to "Fetch Latest Stats",     fetch_stats_competition_path %>
 </section>
 
 <div>
@@ -35,10 +33,7 @@
 ] %>
 </div>
 
-
-
 <section class= 'stat-section'>
-    Stats:
     <% @competition.users.each do |user| %>
     <div class="stat-column">
       <% user.stats_for_competition(@competition).each do |stat| %>
@@ -46,7 +41,6 @@
         <p>
         Name: <%= user.first_name %><% ' ' %> <%= user.last_name %>
         <br />
-
         Steps: <%= stat.steps %>
         <br />
         Miles: <%= stat.miles %>
@@ -56,10 +50,7 @@
         When: <%= stat.recorded_at %>
         </p>
       </div>
-    <% end %>
-  </div>
+      <% end %>
+    </div>
   <% end %>
-  <%= link_to "Get Latest Stats",     fetch_stats_competition_path %>
 </section>
-    
-
